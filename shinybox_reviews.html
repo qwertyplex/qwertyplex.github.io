@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>shinybox reviews</title>
+  <link rel="stylesheet" href="shinybox_reviews.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+	<div id="start-menu">
+		<p id="start-logo">shinybox</p>
+	</div>
+
+
+	<!-- DIV CONTAINER -->
+	<h1>shinybox reviews</h1>
+    <div id="Main-Window">
+		<div class="form-container">
+		  <h2>Leave a Comment</h2>
+		  <form id="comment-form" action="/submit" method="POST">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+
+			<label for="comment">Comment:</label>
+			<textarea id="comment" name="comment" rows="4" required></textarea>
+
+			<button type="submit">Submit</button>
+		  </form>
+		  <div id="form-status"></div>
+
+		  <div id="comment-list"></div>
+		</div>
+
+
+		  <script src="form.js"></script>
+		
+		
+	</div>
+	
+</body>
+</html>
+

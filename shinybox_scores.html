@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shinybox scores</title>
+    <style>
+        body {
+            background-color: #279fa5; /* Light gray background */
+            color: #ffffff; /* Dark gray text color */
+            font-family: Arial, sans-serif; /* Clean and readable font */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>shinybox scores</h1>
+	<p>&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;name&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;time&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;shiny things wasted</p>
+    <button onclick="askConfirmation()">Clear Scores</button>
+    <ul id="scoreList">loading scores...</ul> <!-- This will display all scores -->
+
+    <!-- Simple Popup for confirmation -->
+    <div id="confirmationPopup" style="display:none; position: absolute; border: 1px solid #000; background-color: white; width: 300px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <p>Are you sure you want to clear all scores?</p>
+        <button id="cp_yes" onclick="ClearScores()">Yes</button>
+        <button id="cp_no" onclick="closePopup()">No</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            displayScores();  // Display scores when the page loads
+        };
+
+        function displayScores() {
+			// Retrieve the scores array from localStorage
+			const scores = JSON.parse(localStorage.getItem('gameScores')) || [];
+
+			const scoreList = document.getElementById('scoreList');
+
+			// If there are scores, display them
+			if (scores.length > 0) {
+				scoreList.innerHTML = '';  // Clear "Loading scores..."
+				scores.forEach((scoreData, index) => {
+					const li = document.createElement('li');
+					// Ensure we are extracting the shinythings_wasted correctly
+					li.textContent = `${index + 1}: ${scoreData.name} - ${scoreData.time}s - ${scoreData.shinythings_wasted}`;
+					scoreList.appendChild(li);
+				});
+			} else {
+				scoreList.innerHTML = '<li>No scores found!</li>';
+			}
+		}
+
+
+
+        function askConfirmation() {
+            // Show the confirmation popup
+            document.getElementById('confirmationPopup').style.display = 'block';
+        }
+
+        function ClearScores() {
+            // Clear scores from localStorage
+            localStorage.removeItem('gameScores');
+
+            // Refresh the displayed scores
+            displayScores();
+
+            // Close the confirmation popup
+            closePopup();
+        }
+
+        function closePopup() {
+            // Hide the confirmation popup
+            document.getElementById('confirmationPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,750 @@
+/* CSS RESET // asterik selects ALL elements on page
+Different browsers have different default margin, padding, and box-sizing behaviors. By using this rule, you’re standardizing the appearance of all elements.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Optional: helps manage sizing */
+}
+
+
+
+html {
+	width: 100%; /*entire width of viewport*/
+	height: 100vh; /*entire height of viewport*/
+	font-family: 'Quicksand';
+	overflow: hidden;
+	background: #279fa5;
+	color: #ffffff;
+}
+
+h1 {
+	position: absolute;
+	top: 8%;
+	left: 48%;
+	transform: translateX(-50%);
+	font-size: 15px;
+}
+
+
+
+
+
+#start-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000cc; /* semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#start-logo {
+  padding: 8px 12px;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#start-button {
+  padding: 8px 12px;
+  font-size: 20px;
+  background: #279fa5;
+  color: #ffffff;
+  border: 2px solid #3ed1d8;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#start-button:hover{
+  padding: 8px 12px;
+  font-size: 20px;
+  background: #279fa5;
+  color: #e8e414;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+
+
+#Dev-Panel {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	color: #ffffff;
+	z-index: 5;
+}
+
+.Dev-Menu {
+	background: linear-gradient(0deg, rgba(221, 221, 221, 0.5), rgba(255, 255, 255, 0.5));
+	display: none;  /* Hidden by default */
+	padding: 20px;
+	z-index: 999;
+}
+
+.Dev-Menu.show {
+	position: absolute;
+	top: 3%;
+	left: 0%;
+	width: 400px;
+	height: 600px;
+	display: block; /* Show the menu when 'show' class is added */
+}
+
+
+#About-Panel {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	color: #000000;
+	font-size: 11px;
+}
+
+
+
+#NPC-Container {
+	position: absolute;
+	font-size: 18px;
+	top: 10%;
+	right: 25%;
+	width: 25vw; /* Use vw for clarity */
+	height: 25vh; /* Use vh for clarity */
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #000;
+}
+
+#NPC {
+	font-family: monospace;
+	white-space: pre;
+	text-align: center;
+}
+
+
+#NPC-Text-Container {
+	position: absolute;
+	top: 36%;
+	right: 25%;
+	width: 25%; /*entire width of viewport*/
+	height: 25%; /*entire height of viewport*/
+	overflow: hidden;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #000;
+}
+
+#NPC-Button-Container {
+	color: #ffffff;
+	top: 65%;
+	right: 30%;
+	width: 15%; /*entire width of viewport*/
+	height: 25%; /*entire height of viewport*/
+	position: fixed;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;         /* adds space between buttons */
+
+    padding: 10px;
+    font-size: 14px;
+}
+
+#Computer-Container {
+	background: transparent;
+	color: #00ff00;
+	top:48%;
+	right: 10%;
+	width: 15%; /*entire width of viewport*/
+	height: 25%; /*entire height of viewport*/
+	position: fixed;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;         /* adds space between buttons */
+
+    padding: 10px;
+    font-size: 14px;
+}
+#Computer-Game-Container {
+	background: #000000;
+	border: 1px solid #ffffff;
+	color: #00ff00;
+	top:10%;
+	right: 25%;
+	width: 25%; /*entire width of viewport*/
+	height: 50%; /*entire height of viewport*/
+	position: fixed;
+	z-index: 50;
+	visibility: hidden;
+	cursor: pointer;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;         /* adds space between buttons */
+
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+#userInput {
+	background: #222222;
+	color: #00ff00;
+}
+
+#submit-button {
+	background: #222222;
+	color: #00ff00;
+}
+
+
+#Inventory-Container {
+	position: absolute;
+	top: 20%;
+	left: 22%;
+	width: 16%;
+	/* Remove height to allow it to grow with content */
+	overflow: visible;
+	display: flex;
+	flex-direction: column;
+	gap: 8px; /* optional spacing between items */
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #000;
+}
+
+
+
+#Special-Inventory-Container {
+	position: absolute;
+	top: 65%;
+	left: 22%;
+	width: 25%; /*entire width of viewport*/
+	height: 25%; /*entire height of viewport*/
+	overflow: hidden;
+}
+
+
+
+.buttons {
+    position: fixed;
+    top: 25%;
+    left: 35%;
+    width: 180px;
+    min-height: 600px; /* Set minimum height */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 4px;
+    padding: 16px;
+    font-size: 20px;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #000;
+}
+
+
+
+#button-discard {
+	background: #661daa;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+#button-discard:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+#button-cellphone {
+	background: #1c6e72;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-cellphone:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+#button-trader {
+	background: #cccccc;
+	color: #0000ff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-trader:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+#button-BuyShinybox {
+	background: #0000bb;
+	color: #ffdd00;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+#button-PocketWatch {
+	background: #683426;
+	color: #eeeeee;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+#button-BuyCD {
+	background: #d2d606;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+
+
+
+#button-lemontree {
+	background: #ead653;
+	color: #00720b;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-lemontree:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+#button-BuyLemon {
+	background: #ead653;
+	color: #00720b;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+
+
+
+
+#button-vendingmachine {
+	background: #f40009;
+	color: #eeeeee;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-vendingmachine:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+#button-PowerOn {
+	background: #f40009;
+	color: #eeeeee;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+#button-InsertShinies {
+	background: #f40009;
+	color: #eeeeee;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+	width: 60px;
+}
+
+
+
+
+#button-cave {
+	background: #323331;
+	color: #dd571c;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-cave:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+#button-TakeHeadlamp {
+	background: #00cc00;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+
+
+
+
+
+#button-pawnshop {
+	background: #787878;
+	color: #FFD700;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-pawnshop:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+#button-ExchangeSticks {
+	background: #787878;
+	color: #FFD700;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+#button-SellGold {
+	background: #787878;
+	color: #FFD700;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+
+
+
+
+
+
+#button-library {
+	background: #15a3ea;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-library:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+#button-Book {
+	background: #000050;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+	width: 100px;
+}
+
+#button-GoBack {
+	background: #000050;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+	width: 100px;
+	position: absolute;
+	top: 72%;
+}
+
+#button-BookCodex {
+	background: #82069b;
+	color: #ffaa00;
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+	width: 100px;
+}
+
+
+
+
+
+#button-spookywoods {
+	background: #405551;
+	color: #139930;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-spookywoods:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+#button-EnterSpookyWoods {
+	background: #405551;
+	color: #139930;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+#button-SpookyWoodsMove {
+	background: #405551;
+	color: #139930;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+	width: 60px;
+}
+
+
+
+
+
+#button-Mines {
+	background: #222222;
+	color: #dd571c;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-Mines:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+#button-Typecode {
+	background: #111111;
+	color: #004400;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+#button-MinesGold {
+	background: #111111;
+	color: #ffaa00;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+
+
+#button-Factory {
+	background: #d3ab0a;
+	color: #eeeeee;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-Factory:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+#button-Factory2 {
+	background: #d3ab0a;
+	color: #eeeeee;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-Factory2:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+#button-Mines:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+
+#button-tunnels {
+	background: #000000;
+	color: #aaaaaa;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-tunnels:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+#button-tunnels2 {
+	background: #330000;
+	color: #aaaaaa;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-tunnels2:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+
+#button-Temple {
+	background: #729fa0;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-Temple:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+
+#button-laundromat {
+	background: #23608e;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-laundromat:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+#button-internetcafe {
+	background: #111111;
+	color: #00ff00;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-internetcafe:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+
+#button-teahouse {
+	background: #d1d6ab;
+	color: #008800;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-teahouse:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+#button-computer {
+	background: #000000;
+	color: #00ff00;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-computer:hover {
+	border: 2px solid #0000dd;
+	border-radius: 4px;
+}
+
+
+
+
+#button-news {
+	background: #448866;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-news:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+
+
+#button-bank {
+	background: #e5e5e5;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-bank:hover {
+	border: 2px solid #ffffff;
+}
+
+#button-bank2 {
+	background: #e5e5e5;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-bank:hover {
+	border: 2px solid #ffffff;
+}
+
+
+
+#button-Banquet {
+	background: #54106d;
+	color: #dbc60f;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-Banquet:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+#button-castle {
+	background: #b1b2a4;
+	color: #ffffff;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-castle:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+
+#button-wizard {
+	background: #3ba834;
+	color: #b3bf44;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-wizard:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+#button-smith {
+	background: #444444;
+	color: #eeeeee;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-smith:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+
+#button-dungeon {
+	background: #111111;
+	color: #db1313;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-dungeon:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
+
+
+
+
+#button-devroom {
+	background: #555555;
+	color: #e0c49f;
+	border: 2px solid #3ed1d8;
+	border-radius: 4px;
+}
+#button-devroom:hover {
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+}
